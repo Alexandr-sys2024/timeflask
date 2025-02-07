@@ -7,15 +7,18 @@ app = Flask(__name__)
 def home():
     current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     return f"""
-    <html>
+    <!DOCTYPE html>
+    <html lang='en'>
     <head>
+        <meta charset='UTF-8'>
+        <meta name='viewport' content='width=device-width, initial-scale=1.0'>
         <title>Текущее время</title>
         <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css'>
     </head>
-    <body class='container text-center mt-5'>
-        <h1 class='display-4'>Текущее время</h1>
-        <p class='lead'>{current_time}</p>
-        <a href='/api/time' class='btn btn-primary'>Получить время в JSON</a>
+    <body class='text-center mt-5'>
+        <h1 class='text-primary'>Текущее время:</h1>
+        <p class='fs-3'>{current_time}</p>
+        <a href='/api/time' class='btn btn-success'>Получить время в JSON</a>
     </body>
     </html>
     """
